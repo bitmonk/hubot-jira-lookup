@@ -37,6 +37,9 @@ module.exports = (robot) ->
       .headers(Authorization: auth, Accept: 'application/json')
       .get() (err, res, body) ->
         try
+          console.log("error: " . err)
+          console.log("response: " . res)
+          console.log("body: " . body)
           json = JSON.parse(body)
           json_summary = ""
           if json.fields.summary
